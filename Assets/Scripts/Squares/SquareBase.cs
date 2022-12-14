@@ -1,25 +1,31 @@
 using UnityEngine;
 
-public class Square : MonoBehaviour
+public abstract class SquareBase : MonoBehaviour
 {
-    private Vector3 Target;
+    protected virtual void OnPointerDown(Vector3 Target) { }
+    protected virtual void OnStart() { }
 
+    protected Vector3 Target;
     private float TargetX = 2.8f;
     private float TargetY = 5f;
-
     [SerializeField]
-    private float MovementSpeed;
+    protected Animator animator;
+    [SerializeField]
+    protected float MovementSpeed;
+
+
 
     #region Unity Events
     private void Start()
     {
         UpdateTargetPosition();
+        OnStart();
     }
 
     private void OnMouseDown()
     {
-        transform.position = Target;
-        GlobalEventManager.SendScoreAdd(2);
+        
+        OnPointerDown(Target);    
     }
     #endregion
     private void Update()
