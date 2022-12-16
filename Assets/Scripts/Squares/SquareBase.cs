@@ -13,6 +13,9 @@ public abstract class SquareBase : MonoBehaviour
     [SerializeField] [Space(5)] [Header("Propertes")]
     private float MovementSpeed;
 
+    //[SerializeField] [Header("Audio")]
+    //protected AudioSource audioSource;
+
 
 
     #region Unity Events

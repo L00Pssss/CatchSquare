@@ -5,7 +5,8 @@ public class GlobalEventManager : MonoBehaviour
 {
     public static UnityEvent<int> OnScoreAdd = new();
     public static UnityEvent<int> UpdateScoreText = new();
-    public static UnityEvent OnAudioSourcePlay = new();
+    public static UnityEvent<AudioSource> OnAudioSourcePlay = new();
+    public static UnityEvent OnAudioGameOver = new();
 
     public static void SendScoreAdd(int remeiningCount)
     {
@@ -17,8 +18,12 @@ public class GlobalEventManager : MonoBehaviour
         UpdateScoreText.Invoke(Score);
     }
 
-    public static void PlayAudioSource()
+    public static void PlayAudioSource(AudioSource audio)
     {
-        OnAudioSourcePlay.Invoke();
+        OnAudioSourcePlay.Invoke(audio);
+    }
+    public static void PlayAudioGameOver()
+    {
+        OnAudioGameOver.Invoke();
     }
 }

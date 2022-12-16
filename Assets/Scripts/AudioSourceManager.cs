@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioSourceManager : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSource;
     #region Unity Events
 
     private void Awake()
@@ -14,9 +13,9 @@ public class AudioSourceManager : MonoBehaviour
 
     #region Methods
 
-    public void PlayAudioSoursceScores()
+    public void PlayAudioSoursceScores(AudioSource audio)
     {
-       this.audioSource.Play();
+       audio.Play();
     }
     #endregion
 }

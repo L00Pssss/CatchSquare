@@ -3,8 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class EnemySquare : SquareBase
 {
+    private new AudioSource audio;
+
+    protected override void OnStart()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     protected override void OnPointerDown(Vector3 Target)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+          GlobalEventManager.PlayAudioSource(audio);
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

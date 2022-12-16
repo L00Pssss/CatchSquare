@@ -7,6 +7,7 @@ public class ScoresSquare : SquareBase
 {
     [SerializeField]
     private int ScoresAmount;
+    private new AudioSource audio;
 
     //[SerializeField]
     //private float ScoresWait;
@@ -20,7 +21,7 @@ public class ScoresSquare : SquareBase
         {
             Debug.LogError("ScoreCollectornot on the scene");
         }
-  
+        audio = GetComponent<AudioSource>();
     }
 
     //private IEnumerator CoroutineSqure()
@@ -38,7 +39,7 @@ public class ScoresSquare : SquareBase
     {
         //StartCoroutine(CoroutineSqure());
         transform.position = Target;
-        GlobalEventManager.PlayAudioSource();
+        GlobalEventManager.PlayAudioSource(audio);
         GlobalEventManager.SendScoreAdd(ScoresAmount);
     }
 }

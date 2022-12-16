@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class ScoreCollector : MonoBehaviour
 {
-    private int Scores;
+    private int m_Scores;
 
     #region Unity Events
     private void Start()
     {
-        Scores = 0;
+        m_Scores = 0;
     }
-
     private void Awake()
     {
         GlobalEventManager.OnScoreAdd.AddListener(AddScores);
@@ -20,8 +19,8 @@ public class ScoreCollector : MonoBehaviour
 
     public void AddScores(int scores)
     {
-        Scores += scores;
-        GlobalEventManager.UpdateScores(Scores);
+        m_Scores += scores;
+        GlobalEventManager.UpdateScores(m_Scores);
     }
     #endregion
 }
