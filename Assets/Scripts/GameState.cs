@@ -1,10 +1,14 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class GameState : MonoBehaviour
+
+namespace Square
 {
-    public static void Restart()
+    public class GameState : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        public static void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }

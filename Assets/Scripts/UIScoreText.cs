@@ -1,18 +1,21 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIScoreText : MonoBehaviour
+namespace Square
 {
-    [SerializeField] 
-    private Text Text;
-
-    private void Awake()
+    public class UIScoreText : MonoBehaviour
     {
-        GlobalEventManager.UpdateScoreText.AddListener(UpdateText);
-    }
+        [SerializeField]
+        private Text Text;
 
-    private void UpdateText(int score)
-    {
-        Text.text = score.ToString();
+        private void Awake()
+        {
+            GlobalEventManager.UpdateScoreText.AddListener(UpdateText);
+        }
+
+        private void UpdateText(int score)
+        {
+            Text.text = score.ToString();
+        }
     }
 }

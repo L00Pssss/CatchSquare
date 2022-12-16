@@ -1,21 +1,24 @@
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
-public class AudioSourceManager : MonoBehaviour
+namespace Square
 {
-    #region Unity Events
-
-    private void Awake()
+    [RequireComponent(typeof(AudioSource))]
+    public class AudioSourceManager : MonoBehaviour
     {
-        GlobalEventManager.OnAudioSourcePlay.AddListener(PlayAudioSoursceScores);
-    }
-    #endregion
+        #region Unity Events
 
-    #region Methods
+        private void Awake()
+        {
+            GlobalEventManager.OnAudioSourcePlay.AddListener(PlayAudioSoursceScores);
+        }
+        #endregion
 
-    public void PlayAudioSoursceScores(AudioSource audio)
-    {
-       audio.Play();
+        #region Methods
+
+        public void PlayAudioSoursceScores(AudioSource audio)
+        {
+            audio.Play();
+        }
+        #endregion
     }
-    #endregion
 }

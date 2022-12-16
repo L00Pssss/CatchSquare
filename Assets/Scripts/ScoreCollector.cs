@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class ScoreCollector : MonoBehaviour
+namespace Square
 {
-    private int m_Scores;
-
-    #region Unity Events
-    private void Start()
+    public class ScoreCollector : MonoBehaviour
     {
-        m_Scores = 0;
-    }
-    private void Awake()
-    {
-        GlobalEventManager.OnScoreAdd.AddListener(AddScores);
-    }
-    #endregion
+        private int m_Scores;
 
-    #region Methods
+        #region Unity Events
+        private void Start()
+        {
+            m_Scores = 0;
+        }
+        private void Awake()
+        {
+            GlobalEventManager.OnScoreAdd.AddListener(AddScores);
+        }
+        #endregion
 
-    public void AddScores(int scores)
-    {
-        m_Scores += scores;
-        GlobalEventManager.UpdateScores(m_Scores);
+        #region Methods
+
+        public void AddScores(int scores)
+        {
+            m_Scores += scores;
+            GlobalEventManager.UpdateScores(m_Scores);
+        }
+        #endregion
     }
-    #endregion
 }
