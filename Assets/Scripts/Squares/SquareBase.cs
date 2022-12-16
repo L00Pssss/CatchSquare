@@ -5,13 +5,13 @@ public abstract class SquareBase : MonoBehaviour
     protected virtual void OnPointerDown(Vector3 Target) { }
     protected virtual void OnStart() { }
 
-    protected Vector3 Target;
+    private Vector3 Target;
     private float TargetX = 2.8f;
     private float TargetY = 5f;
-    [SerializeField]
-    protected Animator animator;
-    [SerializeField]
-    protected float MovementSpeed;
+    //[SerializeField]
+    //protected Animator animator;
+    [SerializeField] [Space(5)] [Header("Propertes")]
+    private float MovementSpeed;
 
 
 
