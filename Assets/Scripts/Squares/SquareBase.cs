@@ -6,27 +6,26 @@ namespace Square
     {
         protected virtual void OnPointerDown(Vector3 Target) { }
         protected virtual void OnStart() { }
+        protected virtual void OnAwake() { }
 
         private Vector3 m_Target;
         private float m_TargetX = 2.8f;
         private float m_TargetY = 5f;
         //[SerializeField]
         //protected Animator animator;
-        [SerializeField]
-        [Space(5)]
-        [Header("Propertes")]
+        [SerializeField] [Space(5)] [Header("Propertes")]
         private float m_MovementSpeed;
-
-        //[SerializeField] [Header("Audio")]
-        //protected AudioSource audioSource;
-
-
 
         #region Unity Events
         private void Start()
         {
             UpdateTargetPosition();
             OnStart();
+        }
+
+        private void Awake()
+        {
+            OnAwake();
         }
 
         private void OnMouseDown()

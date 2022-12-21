@@ -9,6 +9,7 @@ namespace Square
     {
         [SerializeField]
         private int m_ScoresAmount;
+        [SerializeField]
         private AudioSource m_audio;
 
         //[SerializeField]
@@ -23,7 +24,12 @@ namespace Square
             {
                 Debug.LogError("ScoreCollectornot on the scene");
             }
-            m_audio = GetComponent<AudioSource>();
+        }
+
+        protected override void OnAwake()
+        {
+           m_audio= GetComponent<AudioSource>();
+           m_audio.playOnAwake = false;
         }
 
         //private IEnumerator CoroutineSqure()

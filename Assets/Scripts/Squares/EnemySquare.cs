@@ -8,7 +8,7 @@ namespace Square
     {
         private AudioSource m_audio;
 
-        protected override void OnStart()
+        protected override void OnAwake()
         {
             m_audio = GetComponent<AudioSource>();
         }
